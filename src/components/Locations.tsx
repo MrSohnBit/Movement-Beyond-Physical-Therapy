@@ -71,28 +71,36 @@ export default function Locations() {
             </div>
           </div>
           
-          <button className="flex items-center gap-2 text-primary font-bold hover:underline group">
+          <a 
+            href="https://www.google.com/maps/dir/?api=1&destination=7010+Little+River+Turnpike+STE+335+Annandale+VA+22003"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-primary font-bold hover:underline group"
+          >
             {t.locations.directions}
             <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </button>
+          </a>
         </motion.div>
         
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative h-[400px] rounded-3xl overflow-hidden shadow-xl"
+          className="relative h-[450px] rounded-3xl overflow-hidden shadow-xl border border-outline-variant/10"
         >
-          {/* Placeholder for Map */}
-          <div className="absolute inset-0 bg-surface-container-high flex items-center justify-center">
-            <div className="text-center p-8">
-              <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-              <p className="text-on-surface-variant font-medium">Interactive Map Integration</p>
-              <p className="text-sm text-on-surface-variant/60">7010 Little River Turnpike STE 335, Annandale, VA</p>
-            </div>
-          </div>
-          {/* In a real app, you'd embed a Google Map here */}
-          <div className="absolute bottom-4 right-4 bg-surface-container-lowest px-4 py-2 rounded-full shadow-lg text-xs font-bold text-primary">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3107.653424647313!2d-77.19451492341584!3d38.83407794998495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64da393a55555%3A0x64761927e1f1f1f1!2s7010%20Little%20River%20Turnpike%20%23335%2C%20Annandale%2C%20VA%2022003!5e0!3m2!1sen!2sus!4v1712275200000!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Movement Beyond Clinic Location"
+            className="grayscale-[0.2] contrast-[1.1]"
+          ></iframe>
+          
+          <div className="absolute bottom-4 right-4 bg-surface-container-lowest px-4 py-2 rounded-full shadow-lg text-xs font-bold text-primary border border-outline-variant/10">
             Annandale, VA
           </div>
         </motion.div>
