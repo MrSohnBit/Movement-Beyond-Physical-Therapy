@@ -52,7 +52,7 @@ export default function Hero() {
         >
           <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/5] lg:aspect-square">
             <img 
-              src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?q=80&w=2069&auto=format&fit=crop" 
+              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" 
               alt="Physical Therapy Session"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"
