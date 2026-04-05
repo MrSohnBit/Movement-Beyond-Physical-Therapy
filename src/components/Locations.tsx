@@ -47,11 +47,11 @@ export default function Locations() {
               </div>
               <div>
                 <h4 className="font-bold text-xl mb-1">{t.locations.contact}</h4>
-                <p className="text-on-surface-variant text-lg">
-                  Phone: (703) 827-3488<br />
-                  Fax: (703) 827-3499<br />
-                  mbptsolution@gmail.com
-                </p>
+                <div className="text-on-surface-variant text-lg space-y-1">
+                  <p>Phone: <a href="tel:7038273488" className="hover:text-primary transition-colors hover:underline">(703) 827-3488</a></p>
+                  <p>Fax: (703) 827-3499</p>
+                  <p><a href="mailto:mbptsolution@gmail.com" className="hover:text-primary transition-colors hover:underline">mbptsolution@gmail.com</a></p>
+                </div>
               </div>
             </div>
             

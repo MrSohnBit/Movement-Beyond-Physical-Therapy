@@ -43,14 +43,17 @@ export default function Header() {
       className="fixed top-0 w-full z-50 clinical-glass shadow-sm"
     >
       <div className="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
-        <div className="flex items-center gap-3">
-          <div className="bg-primary p-1.5 rounded-lg">
+        <button 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer group"
+        >
+          <div className="bg-primary p-1.5 rounded-lg group-active:scale-95 transition-transform">
             <Activity className="text-on-primary w-6 h-6" />
           </div>
           <span className="font-manrope font-extrabold text-2xl text-on-surface tracking-tight">
             Movement Beyond
           </span>
-        </div>
+        </button>
 
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (

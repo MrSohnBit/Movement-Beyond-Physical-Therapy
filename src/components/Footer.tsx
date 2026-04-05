@@ -43,11 +43,11 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-3 text-on-surface-variant">
               <Phone className="w-5 h-5 text-primary shrink-0" />
-              <span>(703) 827-3488</span>
+              <a href="tel:7038273488" className="hover:text-primary transition-colors hover:underline">(703) 827-3488</a>
             </li>
             <li className="flex items-center gap-3 text-on-surface-variant">
               <Mail className="w-5 h-5 text-primary shrink-0" />
-              <span>mbptsolution@gmail.com</span>
+              <a href="mailto:mbptsolution@gmail.com" className="hover:text-primary transition-colors hover:underline">mbptsolution@gmail.com</a>
             </li>
           </ul>
         </div>

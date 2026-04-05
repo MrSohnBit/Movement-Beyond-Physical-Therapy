@@ -1,9 +1,21 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Send } from 'lucide-react';
+import { Send, Copy, Check } from 'lucide-react';
 import { useLanguage } from '@/src/contexts/LanguageContext';
 
 export default function Contact() {
   const { t } = useLanguage();
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  };
 
   return (
     <section id="contact" className="py-24 px-6 max-w-7xl mx-auto scroll-mt-20">
@@ -30,12 +42,25 @@ export default function Contact() {
             <div className="space-y-4">
               <div className="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/10">
                 <h4 className="font-bold text-lg mb-1">{t.contact.directLine}</h4>
-                <p className="text-primary font-bold text-2xl">(703) 827-3488</p>
+                <a href="tel:7038273488" className="text-primary font-bold text-2xl hover:underline block transition-all active:scale-95 origin-left w-fit">
+                  (703) 827-3488
+                </a>
                 <p className="text-on-surface-variant text-sm mt-1">Fax: (703) 827-3499</p>
               </div>
               <div className="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/10">
                 <h4 className="font-bold text-lg mb-1">{t.contact.emailSupport}</h4>
-                <p className="text-primary font-bold text-xl">mbptsolution@gmail.com</p>
+                <div className="flex items-center gap-3">
+                  <a href="mailto:mbptsolution@gmail.com" className="text-primary font-bold text-xl hover:underline transition-all active:scale-95 origin-left">
+                    mbptsolution@gmail.com
+                  </a>
+                  <button 
+                    onClick={() => copyToClipboard('mbptsolution@gmail.com')}
+                    className="p-2 hover:bg-primary/10 rounded-lg transition-all text-primary active:scale-90"
+                    title="Copy to clipboard"
+                  >
+                    {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
