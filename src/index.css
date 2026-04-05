@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@theme {
+  --font-manrope: "Manrope", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  --color-surface: #fbf9f1;
+  --color-surface-container-low: #f6f4ec;
+  --color-surface-container-lowest: #ffffff;
+  --color-primary: #0058bd;
+  --color-primary-container: #2771df;
+  --color-on-primary: #ffffff;
+  --color-on-surface: #1b1c17;
+  --color-on-surface-variant: #424753;
+  --color-secondary: #54615b;
+  --color-outline-variant: #c2c6d5;
+
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 3rem;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-inter antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-manrope;
+  }
+}
+
+.clinical-glass {
+  background: rgba(251, 249, 241, 0.8);
+  backdrop-filter: blur(24px);
+}
