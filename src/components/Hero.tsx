@@ -13,22 +13,23 @@ export default function Hero() {
         <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-primary/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center text-left">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col items-start"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-sm mb-8">
             <CheckCircle2 className="w-4 h-4" />
             {t.hero.badge}
           </div>
           
-          <h1 className="font-manrope font-extrabold text-5xl md:text-7xl tracking-tight text-on-surface leading-[1.1] mb-8">
+          <h1 className="font-manrope font-extrabold text-5xl md:text-7xl tracking-tight text-on-surface leading-[1.1] mb-8 text-left w-full">
             {t.hero.title}
           </h1>
           
-          <p className="text-on-surface-variant text-xl leading-relaxed mb-10 max-w-xl">
+          <p className="text-on-surface-variant text-xl leading-relaxed mb-10 max-w-xl text-left">
             {t.hero.description}
           </p>
           
